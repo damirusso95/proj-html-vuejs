@@ -26,7 +26,7 @@
 
     <!-- seconda sezione  -->
     <!-- Container sezione 2 -->
-    <div class="container-fluid my-5">
+    <div class="container-fluid ">
         <div class="row boxed justify-content-center">
 
             <!-- Image column -->

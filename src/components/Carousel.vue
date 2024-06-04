@@ -8,20 +8,20 @@ export default {
         {
           imgSrc: new URL('../assets/img/testimonials-standard-1.png', import.meta.url).href,
           text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus maxime et quasi ad quidem nam vero voluptate temporibus, porro obcaecati sapiente expedita consequatur fugiat a ullam, molestias consequuntur ex debitis.',
-          subText1: 'testo',
-          subText2: 'altro testo'
+          subText1: 'Virginia Foster',
+          subText2: 'STUDENT'
         },
         {
           imgSrc: new URL('../assets/img/testimonials-standard-2.png', import.meta.url).href,
           text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus maxime et quasi ad quidem nam vero voluptate temporibus, porro obcaecati sapiente expedita consequatur fugiat a ullam, molestias consequuntur ex debitis.',
-          subText1: 'testo',
-          subText2: 'altro testo'
+          subText1: 'Molly Simons',
+          subText2: 'TEACHER'
         },
         {
           imgSrc: new URL('../assets/img/testimonials-standard-3.png', import.meta.url).href,
           text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus maxime et quasi ad quidem nam vero voluptate temporibus, porro obcaecati sapiente expedita consequatur fugiat a ullam, molestias consequuntur ex debitis.',
-          subText1: 'testo',
-          subText2: 'altro testo'
+          subText1: 'Joan Collins',
+          subText2: 'STUDENT'
         }
       ]
     };
@@ -35,15 +35,15 @@ export default {
 </script>
 
 <template>
-  <div class="JS_bg">
-    <div class="container d-flex flex-column align-items-center">
+  <div class="CS_bg">
+    <div class="container d-flex flex-column align-items-center w-50 text-center">
       <div v-for="(slide, index) in slides" :key="index" v-show="index === currentIndex">
-        <img :src="slide.imgSrc" alt="Slide image" class="rounded-circle">
-        <p>{{ slide.text }}</p>
+        <img :src="slide.imgSrc" alt="Slide image">
+        <p class="py-5">{{ slide.text }}</p>
         <p>{{ slide.subText1 }}</p>
         <p>{{ slide.subText2 }}</p>
       </div>
-      <div class="bottoni">
+      <div class="button-container py-5">
         <button v-for="(slide, index) in slides" :key="index" :class="{ active: index === currentIndex }"
           @click="goToSlide(index)" class="indicator"></button>
       </div>
@@ -52,38 +52,31 @@ export default {
 </template>
 
 <style scoped>
-.JS_bg {
+.CS_bg {
   width: 100%;
   background-image: url('../assets/img/h5-parallax-img-1.png');
   background-size: cover;
   padding: 2rem 0;
 }
 
-.carousel-indicators {
+ .indicator.active {
+  background-color: #ffffff;
+} 
+
+.button-container{
+  width: 5rem;
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.carousel-indicators .indicator {
-  background-color: #000;
-  border: 2px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.carousel-indicators .indicator.active {
-  background-color: #000000;
-}
-
-.bottoni{
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  border: 2px;
+  justify-content: space-around;
+ 
   
+}
+
+.indicator{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.50);
+  border: none;
+  cursor: pointer;
 }
 </style>
