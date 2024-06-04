@@ -37,7 +37,7 @@ export default {
 <template>
   <div class="CS_bg">
     <div class="container d-flex flex-column align-items-center w-50 text-center">
-      <div v-for="(slide, index) in slides" :key="index" v-show="index === currentIndex">
+      <div class="py-5" v-for="(slide, index) in slides" :key="index" v-show="index === currentIndex">
         <img :src="slide.imgSrc" alt="Slide image">
         <p class="py-5">{{ slide.text }}</p>
         <p>{{ slide.subText1 }}</p>
