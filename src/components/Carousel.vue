@@ -4,6 +4,7 @@ export default {
   data() {
     return {
       currentIndex: 0,
+      timer: null,
       slides: [
         {
           imgSrc: new URL('../assets/img/testimonials-standard-1.png', import.meta.url).href,
@@ -29,7 +30,26 @@ export default {
   methods: {
     goToSlide(index) {
       this.currentIndex = index;
+    },
+    nextSlide() {
+      if (this.currentIndex + 1 >= this.slides.length) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    },
+    startAutoScroll() {
+      this.timer = setInterval(this.nextSlide, 3000);
+    },
+    stopAutoScroll() {
+      clearInterval(this.timer);
     }
+  },
+  mounted() {
+    this.startAutoScroll();
+  },
+  beforeDestroy() {
+    this.stopAutoScroll();
   }
 };
 </script>
@@ -52,26 +72,34 @@ export default {
 </template>
 
 <style scoped>
+/* Stile per il contenitore principale del carosello con effetto parallax */
 .CS_bg {
   width: 100%;
   background-image: url('../assets/img/h5-parallax-img-1.png');
-  background-size: cover;
+  background-size:cover;
+  background-attachment: fixed; 
   padding: 2rem 0;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
- .indicator.active {
+/* Stile per il bottone attivo */
+.indicator.active {
   background-color: #ffffff;
-} 
+}
 
-.button-container{
+/* Stile per il contenitore dei bottoni di navigazione */
+.button-container {
   width: 5rem;
   display: flex;
   justify-content: space-around;
- 
-  
 }
 
-.indicator{
+/* Stile per ogni indicatore (bottone di navigazione) */
+.indicator {
   width: 15px;
   height: 15px;
   border-radius: 50%;
