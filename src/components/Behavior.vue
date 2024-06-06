@@ -1,95 +1,14 @@
 <script>
-  export default {
-    name: 'TabComponent',
-    data() {
-      return {
-        tabs: [
-          {
-            id: 'list-home',
-            title: 'What we do',
-            contentTitle: 'Learning Possibilities',
-            content: 'Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt',
-            listItems: [
-              'We enrich lives through learning.',
-              'We enrich lives through learning.',
-              'We enrich lives through learning.',
-              'We enrich lives through learning.'
-            ],
-            imgSrc: new URL('../assets/img/h12-tabs-icon-1.png', import.meta.url).href
-          },
-          {
-            id: 'list-profile',
-            title: 'Degree programme',
-            contentTitle: 'Inspiring Minds',
-            content: 'Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt',
-            listItems: [
-              'Maximizing potential through individual attention.',
-              'We enrich lives through learning.',
-              'Enriquecemos vidas a través del aprendizaje.',
-              'Nous enrichissons des vies par l\'apprentissage.'
-            ],
-            imgSrc: new URL('../assets/img/h12-tabs-icon-2.png', import.meta.url).href
+import store from '../data/store.js';
 
-          },
-          {
-            id: 'list-messages',
-            title: 'Career achievements',
-            contentTitle: 'Investing in Knowledge',
-            content: 'Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt',
-            listItems: [
-              'We enrich lives through learning.',
-              'We enrich lives through learning.',
-              'We enrich lives through learning.',
-              'We enrich lives through learning.'
-            ],
-            imgSrc: new URL('../assets/img/h12-tabs-icon-3.png', import.meta.url).href
-
-          },
-          {
-            id: 'list-settings',
-            title: 'Personal management',
-            contentTitle: 'Secure Your Future',
-            content: 'Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt',
-            listItems: [
-              'We enrich lives through learning.',
-              'We enrich lives through learning.',
-              'We enrich lives through learning.',
-              'We enrich lives through learning.'
-            ],
-            imgSrc: new URL('../assets/img/h12-tabs-icon-4.png', import.meta.url).href
-
-          },
-          {
-            id: 'list-5',
-            title: 'Step to success',
-            contentTitle: 'Where Learning Begins',
-            content: 'Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt',
-            listItems: [
-              'We enrich lives through learning.',
-              'We enrich lives attraverso l\'apprendimento.',
-              'Enriquecemos vidas a través del aprendizaje.',
-              'Nous enrichissons des vies par l\'apprentissage.'
-            ],
-            imgSrc: new URL('../assets/img/h12-tabs-icon-5.png', import.meta.url).href
-          },
-          {
-            id: 'list-6',
-            title: 'Knowledge transfer',
-            contentTitle: 'Knowledge is Power',
-            content: 'Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt',
-            listItems: [
-              'We enrich lives through learning.',
-              'We enrich lives attraverso l\'apprendimento.',
-              'Enriquecemos vidas a través del aprendizaje.',
-              'Nous enrichissons des vies par l\'apprentissage.'
-            ],
-            imgSrc: new URL('../assets/img/h12-tabs-icon-6.png', import.meta.url).href
-          }
-        ]
-      };
-    }
-  };
-  </script>
+export default {
+  data() {
+    return {
+      tabs: store.tabs 
+    };
+  }
+};
+</script>
 
 <template>
   <div class=" boxed container-fluid">
@@ -141,9 +60,7 @@
     </div>
   </div>
   </template>
-  
-  
-  
+ 
   <style scoped>
   .boxed{
     max-width: 1400px;

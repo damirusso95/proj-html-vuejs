@@ -1,30 +1,13 @@
 <script>
+import store from '../data/store.js';
+
 export default {
   name: 'Carousel',
   data() {
     return {
       currentIndex: 0,
       timer: null,
-      slides: [
-        {
-          imgSrc: new URL('../assets/img/testimonials-standard-1.png', import.meta.url).href,
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus maxime et quasi ad quidem nam vero voluptate temporibus, porro obcaecati sapiente expedita consequatur fugiat a ullam, molestias consequuntur ex debitis.',
-          subText1: 'Virginia Foster',
-          subText2: 'STUDENT'
-        },
-        {
-          imgSrc: new URL('../assets/img/testimonials-standard-2.png', import.meta.url).href,
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus maxime et quasi ad quidem nam vero voluptate temporibus, porro obcaecati sapiente expedita consequatur fugiat a ullam, molestias consequuntur ex debitis.',
-          subText1: 'Molly Simons',
-          subText2: 'TEACHER'
-        },
-        {
-          imgSrc: new URL('../assets/img/testimonials-standard-3.png', import.meta.url).href,
-          text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus maxime et quasi ad quidem nam vero voluptate temporibus, porro obcaecati sapiente expedita consequatur fugiat a ullam, molestias consequuntur ex debitis.',
-          subText1: 'Joan Collins',
-          subText2: 'STUDENT'
-        }
-      ]
+      slides: store.slides,
     };
   },
   methods: {

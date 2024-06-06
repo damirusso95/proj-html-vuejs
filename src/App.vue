@@ -1,5 +1,5 @@
 <script >
-import MainSection1 from './components/MainSection1.vue';
+import SectionTextImg from './components/SectionTextImg.vue';
 import Carousel from './components/Carousel.vue';
 import CardContainer from './components/CardContainer.vue';
 import Behavior from './components/Behavior.vue';
@@ -9,7 +9,7 @@ import Behavior from './components/Behavior.vue';
 
 export default{
     components: {
-        MainSection1,
+        SectionTextImg,
         Carousel,
         Behavior,
         CardContainer,
@@ -20,10 +20,9 @@ export default{
 </script>
 
 <template>
-  <MainSection1/>
+  <SectionTextImg/>
   <Carousel />
   <Behavior />
-  
   <CardContainer />
 
 </template>

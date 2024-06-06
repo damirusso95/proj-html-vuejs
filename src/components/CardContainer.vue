@@ -1,78 +1,11 @@
 <script>
+import store from '../data/store.js';
+
 export default {
     data() {
         return {
-            // Array di card
-            cards: [
-                {
-                    title: "Bussines english",
-                    name: "Preston Marshall",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-1-f-img.jpg', import.meta.url).href,
-                    tag: "Bussines"
-
-                },
-                {
-                    title: "Social computing",
-                    name: "David Sanders",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-2-f-img.jpg', import.meta.url).href,
-                    tag: "Programming"
-
-                },
-                {
-                    title: "Learn Spanish",
-                    name: "Jennie king",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-3-f-img.jpg', import.meta.url).href,
-                    tag: "Languages"
-
-                },
-                {
-                    title: "Basic Marketing",
-                    name: "Edward Bowman",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-4-f-img.jpg', import.meta.url).href,
-                    tag: "Bussines"
-
-                },
-                {
-                    title: "Android developer",
-                    name: "David Sanders",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-5-f-img.jpg', import.meta.url).href,
-                    tag: "Programming"
-
-                },
-                {
-                    title: "Web designing",
-                    name: "Jennifer pawell",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-6-f-img.jpg', import.meta.url).href,
-                    tag: "Programming"
-                },
-                {
-                    title: "Financial modeling",
-                    name: "Edward Bowman",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-12-f-img.jpg', import.meta.url).href,
-                    tag: "Bussines"
-                },
-                {
-                    title: "Academic english",
-                    name: "Dave Robbins",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-8-f-img.jpg', import.meta.url).href,
-                    tag: "Languages"
-                },
-                {
-                    title: "Modern psychology",
-                    name: "Kathryn Webb",
-                    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-9-f-img.jpg', import.meta.url).href,
-                    tag: "Languages"
-                },
-            ],
+            cards: store.cards,
+           
             // Indice di partenza per il gruppo di card da visualizzare
             startIndex: 0,
             // Numero di card da visualizzare per pagina
