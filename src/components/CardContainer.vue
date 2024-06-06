@@ -8,55 +8,69 @@ export default {
                     title: "Bussines english",
                     name: "Preston Marshall",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-1-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-1-f-img.jpg', import.meta.url).href,
+                    tag: "Bussines"
+
                 },
                 {
                     title: "Social computing",
                     name: "David Sanders",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-2-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-2-f-img.jpg', import.meta.url).href,
+                    tag: "Programming"
+
                 },
                 {
                     title: "Learn Spanish",
                     name: "Jennie king",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-3-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-3-f-img.jpg', import.meta.url).href,
+                    tag: "Languages"
+
                 },
                 {
                     title: "Basic Marketing",
                     name: "Edward Bowman",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-4-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-4-f-img.jpg', import.meta.url).href,
+                    tag: "Bussines"
+
                 },
                 {
                     title: "Android developer",
                     name: "David Sanders",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-5-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-5-f-img.jpg', import.meta.url).href,
+                    tag: "Programming"
+
                 },
                 {
                     title: "Web designing",
                     name: "Jennifer pawell",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-6-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-6-f-img.jpg', import.meta.url).href,
+                    tag: "Programming"
                 },
                 {
                     title: "Financial modeling",
                     name: "Edward Bowman",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-12-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-12-f-img.jpg', import.meta.url).href,
+                    tag: "Bussines"
                 },
                 {
                     title: "Academic english",
                     name: "Dave Robbins",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-8-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-8-f-img.jpg', import.meta.url).href,
+                    tag: "Languages"
                 },
                 {
                     title: "Modern psychology",
                     name: "Kathryn Webb",
                     content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod earum possimus. Qui corporis dolores laudantium molestiae maxime.",
-                    imgSrc: new URL('../assets/img/course-9-f-img.jpg', import.meta.url).href
+                    imgSrc: new URL('../assets/img/course-9-f-img.jpg', import.meta.url).href,
+                    tag: "Languages"
                 },
             ],
             // Indice di partenza per il gruppo di card da visualizzare
@@ -109,20 +123,37 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="container-fluid  px-5 boxed">
+        <div class="row justify-content-center text-center my-5">
+            <div class="col-8">
+                <h2>Popular online coursers</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, cum, similique nostrum, laboriosam
+                    asperiores corporis amet animi quo beatae magnam labore! Hic consequatur dolorem iusto ipsum minus
+                    sunt saepe officiis!</p>
+            </div>
+        </div>
         <!-- Contenitore principale del carosello -->
         <div class="container">
             <div class="row">
                 <!-- Visualizza le card in blocchi da 3 -->
-                <div v-for="(card, index) in displayedCards"  class="card col-4">
+                <div v-for="(card, index) in displayedCards" class="card col-4">
                     <!-- Immagine della card -->
                     <img :src="card.imgSrc" alt="">
                     <!-- Titolo della card -->
-                    <h2>{{ card.title }}</h2>
+                    <div class="row align-items-center">
+                        <div class="col-9">
+                            <h2>{{ card.title }}</h2>
+                        </div>
+                        <div class="col-1"><span class="badge rounded-pill bg-primary ">Primary</span></div>
+                    </div>
                     <!-- nome -->
                     <p>{{ card.name }}</p>
                     <!-- Contenuto della card -->
                     <p>{{ card.content }}</p>
+                    <div class="icon-container">
+                        <span><i class="fa-solid fa-user" style="color: #B9B9B9;"> 0</i></span>
+                        <span class="px-3"><i class="fa-solid fa-tag" style="color: #B9B9B9;">  {{ card.tag }}</i></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,13 +161,22 @@ export default {
         <!-- Contenitore dei pallini di navigazione -->
         <div class="dots-container">
             <!-- Crea un pallino per ogni gruppo di card -->
-            <span v-for="(dot, index) in totalDots"  class="dot"
-                :class="{ active: startIndex / cardsPerPage === index }" @click="goToPage(index)"></span>
+            <span v-for="(dot, index) in totalDots" class="dot" :class="{ active: startIndex / cardsPerPage === index }"
+                @click="goToPage(index)"></span>
         </div>
     </div>
 </template>
 
 <style scoped>
+.container-fluid {
+    background-image: url("../assets/img/background-pattern.jpg");
+    background-size: cover;
+}
+.icon-container{
+    font-size: 12px;
+    padding: 1rem 0;
+}
+
 .card {
     padding: 10px;
     margin-bottom: 10px;
@@ -163,5 +203,9 @@ export default {
 /* Stile per il pallino attivo */
 .dot.active {
     background-color: #2873ff;
+}
+
+.boxed {
+    max-width: 1400px;
 }
 </style>
