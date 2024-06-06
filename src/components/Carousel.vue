@@ -59,7 +59,7 @@ export default {
   background-size: cover;
   background-attachment: fixed;
   padding: 2rem 0;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -121,8 +121,11 @@ a{
 
 }
 
+.ST_Border{
+    border-bottom: 2px solid;
+}
+
 .boxed{
     max-width: 1400px;
 }
-
 </style>
