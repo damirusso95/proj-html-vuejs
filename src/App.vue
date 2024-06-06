@@ -4,6 +4,11 @@ import Carousel from './components/Carousel.vue';
 import CardContainer from './components/CardContainer.vue';
 import Behavior from './components/Behavior.vue';
 import BestTutor from './components/BestTutor.vue';
+import AppHeader from './components/AppHeader.vue';
+import PageFooter from './components/PageFooter/PageFooter.vue';
+
+
+
 
 
 
@@ -15,7 +20,9 @@ export default{
         Carousel,
         Behavior,
         CardContainer,
-        BestTutor
+        BestTutor,
+        AppHeader,
+        PageFooter,
         
     },
 }
@@ -23,13 +30,13 @@ export default{
 </script>
 
 <template>
+  <AppHeader/>
   <SectionTextImg/>
   <Carousel />
   <Behavior />
   <CardContainer />
   <BestTutor />
-
-
+  <PageFooter />
 </template>
 
 <style >

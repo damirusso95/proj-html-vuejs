@@ -40,7 +40,6 @@ export default {
                     temporibus, magni nisi iusto a nesciunt. Repudiandae, obcaecati! Nihil maxime magni quos fugiat
                     voluptatibus magnam beatae aspernatur.</p>
             </div>
-
         </div>
 
 
